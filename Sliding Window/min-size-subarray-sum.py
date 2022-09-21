@@ -14,5 +14,4 @@ class Solution:
                     min_length = min(min_length,end-start+1)
                     sum -= nums[start]
                     start +=1
-            end += 1
         return 0 if min_length == inf else min_length
