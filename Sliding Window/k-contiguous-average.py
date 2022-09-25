@@ -1,5 +1,7 @@
-#brute force
+#lc easy
 #Given an array, find the average of all contiguous subarrays of size ‘K’ in it.
+
+#brute force
 def find_averages_of_subarrays(K, arr):
   result = []
   for i in range(len(arr)-K+1):
