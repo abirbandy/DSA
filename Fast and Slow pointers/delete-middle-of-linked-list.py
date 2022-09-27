@@ -13,10 +13,12 @@ The middle node of a linked list of size n is the ⌊n / 2⌋th node from the st
 class Solution:
     def deleteMiddle(self, head: Optional[ListNode]) -> Optional[ListNode]:
         if not head.next: return None
-        slow, fast = head, head.next.next
+        slow, fast = head, head
         while fast and fast.next:
-            slow = slow.next
             fast = fast.next.next
-        slow.next = slow.next.next
+            if not fast or not fast.next:
+                slow.next = slow.next.next
+            else:
+                slow = slow.next
         return head
         
